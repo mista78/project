@@ -1,0 +1,49 @@
+.cards {
+  /* Style for "Rectangle" */
+    width: 100%;
+    border-radius: 2px;
+    background-color: #fff;
+    padding: 15px 30px;
+    color: darken(#fff,45);
+    opacity: .80;
+
+    @include transition-duration(.3s);
+
+    &:hover {
+        opacity: 1;
+    }
+    & &-icons ,  & &-stats {
+    	display: inline-block;
+		vertical-align: middle;
+    }
+    & &-icons {
+	    width: 56px;
+	    height: 56px;
+	    line-height: 56px;
+	    text-align: center;
+	    border-radius: 50%;
+	    background: rgba(#000,0.1);
+        font-size: 1.5em;
+	}
+
+	& &-stats {
+		margin-left: 12px;
+		color:#fff;
+		& h3 {
+			font-weight: 600;
+			color:#fff;
+		}
+	}
+}
+
+
+
+@include cards-color('aqua',#00c0ef);
+@include cards-color('maroon',#85144b);
+@include cards-color('blue',#0073b7);
+@include cards-color('teal',#39cccc);
+@include cards-color('success',#1cc327);
+@include cards-color('green',#00a65a);
+@include cards-color('purple',#bb4fd2);
+@include cards-color('warning',#f08232);
+@include cards-color('red',#f56954);

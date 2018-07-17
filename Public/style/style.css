@@ -1,0 +1,136 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+html {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+q, blockquote {
+  quotes: none;
+}
+q:before, q:after, blockquote:before, blockquote:after {
+  content: "";
+  content: none;
+}
+
+a img {
+  border: none;
+}
+
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
+  display: block;
+}
+
+.sidebar {
+  position: fixed;
+  width: 200px;
+  top: 0%;
+  bottom: 0;
+  left: 0;
+  z-index: 1000;
+  background: #34495E;
+  padding: 0 15px;
+  -moz-transition: 0.3s;
+  -o-transition: 0.3s;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.chow {
+  -moz-transform: translateY(-230px);
+  -ms-transform: translateY(-230px);
+  -webkit-transform: translateY(-230px);
+  transform: translateY(-230px);
+}
+
+.progressbar {
+  height: 5px;
+  position: relative;
+  border-radius: 10px;
+  background: #22303d;
+  width: 100%;
+  top: 50px;
+}
+
+.bars {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  z-index: 500;
+  background: black;
+  border-radius: 10px;
+}
+
+.resume {
+  position: absolute;
+  left: 230px;
+  -moz-transition: transform 0.3s;
+  -o-transition: transform 0.3s;
+  -webkit-transition: transform 0.3s;
+  transition: transform 0.3s;
+  top: 0;
+  bottom: 0;
+  right: 0;
+}
+
+.text {
+  text-align: justify;
+}
+
+.container {
+  padding: 0 15px;
+}
+
+.paralax {
+  /* height: 400px; */
+  /* background-image: url("") */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.paralax img {
+  display: none;
+}
+
+* {
+  font-family: 'Source Sans Pro', sans-serif;
+}

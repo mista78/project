@@ -1,0 +1,95 @@
+.main-sidebar {
+	position: fixed;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: $menu-width;
+	z-index: 880;
+	background: #23272d;
+
+	& .sidebar-brand {
+		display: inline-block;
+		width: 100%;
+		text-align: center;
+		height: $menu-height;
+		line-height: $menu-height;
+		border-bottom: 1px solid rgba(#000,0.1);
+		& strong {
+			color: #fff;
+		}
+	}
+
+	& .sidebar-menu {
+		padding: 0;
+		margin: 0;
+
+		& li {
+			display: block;
+			border-bottom: 1px solid #262A31;
+			background: #21242B;
+			&.menu-header {
+				padding: 7px 15px;
+				color: darken($body-colors, $amount * 8);
+				font-size: 10px;
+				text-transform: uppercase;
+				letter-spacing: 1.5px;
+				font-weight: 600;	
+			}
+
+			& ul.menu-dropdown {
+				display: none;
+				margin: 0;
+				& li {
+					padding-left: 15px;
+					border-bottom: 0px !important;
+					background: #1F2227;
+					& a{
+						padding-top: 7px;
+						padding-bottom: 7px;
+						font-size: .8rem;
+						color: #E0E0E0;
+						font-weight: 400;
+						& svg , & i {
+							font-size: 16px;
+							margin-top: 0;
+							text-align: center;
+							color: #fff;
+						}
+					}
+				}
+			}
+			& a {
+				display: inline-block;
+				width: 100%;
+				padding: 13px 18px;
+				color: #A7B1C2;
+				font-weight: 600;
+				text-decoration: none;
+				&.has-dropdown::after {
+				    font-family: "Font Awesome 5 Solid";
+				    content: "\f107";
+				    float: right;
+				    font-size: 12px;
+				    margin-top: 3px;
+				}
+				& svg , & i {
+					width: 20px;
+					margin-right: 25px;
+					font-size: 20px;
+					text-align: center;
+					float: left;
+					color: #fff;
+				}	
+			}
+		}
+	}
+}
+
+.main-content {
+	padding-left: $menu-width + $gutter * 0.5;
+	padding-right: $gutter * 0.5;
+	padding-top: $menu-height + 20;
+	width: 100%;
+	
+}
+

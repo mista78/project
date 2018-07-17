@@ -1,0 +1,22 @@
+%col {
+	position: relative;
+	min-height: 1px;
+
+	padding: 0 $gutter * 0.5;
+
+}
+
+%clearfix {
+  &:before, &:after {
+    content:" ";
+    display:table;
+  }
+
+  &:after {
+    clear:both;
+  }
+
+  & {
+    *zoom:1;
+  }
+}
