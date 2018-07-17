@@ -3,8 +3,39 @@ body, html {
 	margin: 0;
 	font-family: 'Open Sans', sans-serif;
 }
+.sidebar {
+	font-size: 0.5em;
+	background: #000;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+
+	width: 250px;
+	z-index: 500;
+}
+
+.active {
+	transform: translateY(0px);
+	-moz-transition: 0.3s;
+	  -o-transition: 0.3s;
+	  -webkit-transition: 0.3s;
+	  transition: 0.3s;
+	  height: 100%;
+}
+
+
+.panel {
+	background: transparent;
+}
+.sidebar.left {
+	left:0;
+}
+
+.sidebar.right {
+	right: 0;
+}
 .bgimg {
-	background-image: url('<?= Webroot("img/maint/" . ($conf['config']['img'] ?? "maintenance.jpg")) ?>');
+	
 	height: 100%;
 	background-position: center;
 	background-size: cover;
@@ -48,4 +79,8 @@ hr {
 }
 #demo span {
 	display: inline-block;
+}
+
+h5,h1,h2,h3,h4 {
+	color: #fff;
 }
