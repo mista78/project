@@ -8,20 +8,21 @@
 		<?= link_style(['file' => 'css/style']) ?>
 		<script type="text/javascript">
 		(function($){
-		$.fn.Center= function(){
-		this.css({
-		'position' : 'fixed',
-		'left' :'50%',
-		'top' :'50%'
-		});
-		this.css({
-		'margin-left': -this.width()/2 + 'px',
-		'margin-top' : -this.height()/2 + 'px'
-		});
-		};
+			$.fn.Center= function(){
+				this.css({
+					'position' : 'fixed',
+					'left' :'50%',
+					'top' :'50%'
+				});
+				this.css({
+					'margin-left': -this.width()/2 + 'px',
+					'margin-top' : -this.height()/2 + 'px'
+				});
+			};
 		})(jQuery);
+		
 		$(document).ready(function(){
-		$('#content').Center();
+			$('#content').Center();
 		});
 		</script>
 		<style>

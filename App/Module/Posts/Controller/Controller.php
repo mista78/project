@@ -17,10 +17,6 @@ function index($id = null) {
 		'conditions' => $cond
 	]);
 	$d['slider'] = array_slice($d['posts'],0 , 3);
-
-	$data = [];
-	$data['test'] = find(['conditions' => ['like' => ['name' => 'e'], "online" => 1]]); 
-	// debug($data);
 	return $d;
 }
 

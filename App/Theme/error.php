@@ -4,38 +4,7 @@
 		<meta charset="utf-8">
 		<title></title>
 		<link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet">
-		<style>
-		body {
-		color: #98a6ad;
-		}
-		.wrapper-page {
-		margin: 5% auto;
-		position: relative;
-		width: 420px;
-		}
-		.text-center {
-		text-align: center;
-		}
-		.ex-page-content .text-error {
-		color: #252932;
-		font-size: 98px;
-		font-weight: 700;
-		line-height: 150px;
-		}
-		.text-primary {
-		color: #5d9cec;
-		}
-		.ex-page-content .text-error i {
-		font-size: 78px;
-		padding: 0 10px;
-		}
-		.text-pink {
-		color: #fb6d9d;
-		}
-		.text-info {
-		color: #34d3eb;
-		}
-		</style>
+		<?= link_style(['file' => 'css/error']) ?>
 	</head>
 	<body>
 		
