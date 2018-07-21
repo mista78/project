@@ -1,6 +1,6 @@
 <?php 
 	
-	$md6 = ['tags' => 'p', 'class' => 'col-md-6'];
+	$md6 = ['tags' => 'p', 'class' => 'col-md-6 col-xs-6'];
 	$md12 = ['tags' => 'p', 'class' => 'col-md-12'];
 
 ?>
@@ -10,9 +10,9 @@
 		<title><?= $conf['config']['title'] ?? 'Devlife' ?> | Maintenance</title>
 		<link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet">
 		<meta charset="utf-8">
+		<?= link_style(['file' => 'css/style']) ?>
+		<?= link_style(['file' => 'css/maint']) ?>
 	</head>
-	<?= link_style(['file' => 'css/style']) ?>
-	<?= link_style(['file' => 'css/maint']) ?>
 	<body>
 		<div class="bgimg" style="background-image: url('<?= Webroot("img/maint/" . ($conf['config']['img'] ?? "maintenance.jpg")) ?>');">
 			<div class="middle">
