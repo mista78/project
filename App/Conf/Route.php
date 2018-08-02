@@ -9,6 +9,6 @@
 	}
 	Connect();
 	Prefix('prefix', 'admin');
-	// get('', 'home');
+	GetUrl('', 'home');
 
 ?>

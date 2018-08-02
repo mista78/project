@@ -29,7 +29,7 @@
 	function loadController() 
 	{
 		global $request,$route,$rended,$d;
-		$file = APP . 'Module/' . ucfirst($request['request']['controller']) . '/Controller/Controller.php';
+		$file = APP . 'Module/' . ucfirst($request['request']['controller']) . '/Controller/controller.php';
 		if (file_exists($file)) {
 			require_once $file; 
 		} else {
