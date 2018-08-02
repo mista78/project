@@ -14,7 +14,9 @@
 			$request['request']['action'] = $request['prefix'] .'_' . $request['request']['action'];
 		}
 		if (!in_array($request['request']['action'],GetMethod($request['request']['controller']))) {
-			Redirection('erreur/notfound');
+			echo "cette action n'exists pas";
+			die();
+			// Redirection();
 		}
 		require_once APP . "Conf/Hook.php";
 		$d = call_user_func_array($request['request']['action'], $request['request']['params']);
@@ -31,7 +33,9 @@
 		if (file_exists($file)) {
 			require_once $file; 
 		} else {
-			Redirection('erreur/notfound');
+			echo "ceux controlleur n'exists pas";
+			die();
+			// Redirection();
 		}
 	}
 
