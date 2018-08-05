@@ -19,7 +19,7 @@ function connect()
         $conf['db'] = $pdo;
         $db = $pdo;
     } catch (PDOException $e) {
-        die('Erreur' . $e->getMessage());
+        echo "<div style='color:red'> Veuillez configurer le fichier ". APP ."Dep". DS ."Database.php pour la connexion a la base de donnée </div>";
     }
 }
 

@@ -3,7 +3,7 @@
 	function GetMethod (string $path,string $filename = 'Controller') :array
 	{
 		$data = [];
-		$file = APP . 'Module/' . ucfirst($path) . '/Controller/'.ucfirst($filename).'.php';
+		$file = APP . 'Module'. DS . ucfirst($path) . DS .'Controller'. DS .ucfirst($filename).'.php';
 		if (file_exists($file))
 		{
 			$file = file_get_contents($file);
