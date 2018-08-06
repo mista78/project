@@ -3,12 +3,12 @@
 
 function CacheWrite($cachename,$content) {
 	global $conf;
-	return file_put_contents($conf['dirname'] . '/' . $cachename, $content);
+	return file_put_contents($conf['dirname'] . DS . $cachename, $content);
 }
 
 function CacheRead($cachename) {
 	global $conf;
-	$file = $conf['dirname'] . '/' . $cachename;
+	$file = $conf['dirname'] . DS . $cachename;
 	if (!file_exists($file)) {
 		return false;
 	}

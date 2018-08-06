@@ -18,7 +18,7 @@
 		ob_start(); 
 		require($views);
 		$content = ob_get_clean();  
-		$theme = APP . "Theme/" . ($conf['tmp'] ?? "default") .".php";
+		$theme = APP . "Theme" . DS . ($conf['tmp'] ?? "default") .".php";
 		if (file_exists($theme)) {
 			require $theme;
 		} else { echo $content; }

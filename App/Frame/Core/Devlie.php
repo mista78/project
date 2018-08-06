@@ -18,7 +18,10 @@
 			die();
 			// Redirection();
 		}
-		require_once APP . "Conf/Hook.php";
+		$hook =  APP . "Conf". DS ."Hook.php";
+		if (file_exists($hook)) {
+			require_once $hook;
+		}
 		$d = call_user_func_array($request['request']['action'], $request['request']['params']);
 		if(is_null($d)) { $d = [];  }
 		if($d === 0 ) { $rended = true;  }
@@ -29,7 +32,7 @@
 	function loadController() 
 	{
 		global $request,$route,$rended,$d;
-		$file = APP . 'Module/' . ucfirst($request['request']['controller']) . '/Controller/controller.php';
+		$file = APP . 'Module'. DS . ucfirst($request['request']['controller']) . DS .'Controller'. DS .'controller.php';
 		if (file_exists($file)) {
 			require_once $file; 
 		} else {

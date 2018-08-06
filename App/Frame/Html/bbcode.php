@@ -33,13 +33,3 @@ function parser ( $text ) {
 
 	return $text;
 }
-
-Config('rank', [
-
-	'1' => 'Visiteur',
-	'2' => "Membres",
-	'3' => "Moderateur",
-	'4' => "Administrateur",
-	'5' => "Fondateur"
-
-]);

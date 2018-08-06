@@ -7,6 +7,6 @@
 </head>
 <body>
 	<h1>Project</h1>
-	<?php echo $content ?>
+	<?= $content ?>
 </body>
 </html>
