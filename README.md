@@ -7,12 +7,12 @@
 Crée le dossier dans module , il devras comporter un dossier Controller et Views , avec par defaut un fichier controller.php dans le dossier Controller
 
 ```php
- **********
+ /**********
  * /App/Module
  * /App/Module/page/
  * /App/Module/page/Controller/controller.php
  * /App/Module/page/Views/index.php
- **********
+ **********/
 
 
  // Fichier controller.php
@@ -27,10 +27,10 @@ Crée le dossier dans module , il devras comporter un dossier Controller et View
 ## Connexion a la base de donnée
 
 ```php
- **********
+ /**********
  * /App/Dep
  * /App/Dep/Database.php
- **********
+ **********/
 
  return array(
  
