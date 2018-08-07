@@ -42,4 +42,4 @@ Crée le dossier dans module , il devras comporter un dossier Controller et View
  );
 ```
 
-* La suite encoure d'édition ......*
+*La suite encoure d'édition ......*
