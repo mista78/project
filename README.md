@@ -1,9 +1,9 @@
 # Project
-> Project est framework php mais pas comme tout les framework il s'address a tout les debutant, car le code celui-ci est entierement en procedural et permet à un debutant de partir sur une base qu'il peut connaitre et structurer ... le readme se completera aux file du developpement du framework .
+> **Project** est framework PHP, mais pas comme tous les frameworks puisqu'il s'adresse à tous les débutants, car le code de celui-ci est entièrement en procédural. Ce qui permet à un débutant de partir sur une base qu'il peut connaitre et structurer.
 
-## Creation de page(Module)
+## Création de pages (Modules)
 
-Crée le dossier dans module , il devras comporter un dossier Controller et Views , avec par defaut un fichier controller.php dans le dossier Controller
+Créer le dossier dans ``module``. Il devra comporter un dossier Controller et Views. Avec par défaut un fichier controller.php dans le dossier Controller.
 
 ```php
  /**********
@@ -16,8 +16,8 @@ Crée le dossier dans module , il devras comporter un dossier Controller et View
 
  // Fichier controller.php
 
- // Chaque fonction egale une page 
- // Donc pour la page index on creer la fonction index et dans views le fichier index.php
+ // Chaque fonction correspond à une page 
+ // Donc pour la page index, vous devez créer la fonction index et dans le dossier Views,  le fichier index.php
  function index() {
 
  }
@@ -41,4 +41,4 @@ Crée le dossier dans module , il devras comporter un dossier Controller et View
  );
 ```
 
-*La suite encoure d'édition ......*
+*La suite en cours d'édition...*
