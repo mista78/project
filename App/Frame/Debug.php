@@ -1,12 +1,16 @@
 <?php 
 
-	
-	function Debug ($vars)
-	{
-		echo "<pre>";
-			print_r($vars);
-		echo "</pre>";
-	}
+    function Debug ($state) 
+    {
+        $debug = debug_backtrace(); 
+        echo "<pre> <code>";
+		foreach($debug as $k=>$v){
+			echo '<div><strong>'.$v['file'].' </strong> l.'.$v['line'].'</div>'; 
+		}
+        print_r($state);
+        echo "</code> </pre>";
+    }
+    
 	
 	function fa ($font = []) {
 	    $font['type']   = isset($font['type']) ? $font['type'] : 'fas';

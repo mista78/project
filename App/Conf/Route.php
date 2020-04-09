@@ -8,7 +8,5 @@
 		$data = null;
 	}
 	Connect();
-	Prefix('prefix', 'admin');
-	GetUrl('', 'home');
 
 ?>

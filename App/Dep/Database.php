@@ -3,8 +3,8 @@
 return array(
 
 	'host' => 'localhost',
-	'base' => 'project',
-	'user' => 'user',
-	'pass' => 'pass',
+	'base' => 'test',
+	'user' => 'root',
+	'pass' => '',
 
 );

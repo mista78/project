@@ -19,7 +19,13 @@ function GetParser($url,$request)
     $url = trim($url, '/');
 
     if (empty($url)) {
-        $url = $route['request'][0]['url'];
+        $default = null;
+        foreach ($route["request"] as $key => $value) {
+            if ($value["redir"] === "''") {
+                $default = $value["url"];
+            }
+        }
+        $url = $default; 
     } else {
         $match = false;
         foreach ($route['request'] as $v) {

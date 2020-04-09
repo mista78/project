@@ -1,14 +1,13 @@
 <?php
 
-	function GetMethod (string $path,string $filename = 'Controller') :array
+	function GetMethod (string $path,string $file, $index = 1) :array
 	{
 		$data = [];
-		$file = APP . 'Module'. DS . ucfirst($path) . DS .'Controller'. DS .ucfirst($filename).'.php';
 		if (file_exists($file))
 		{
-			$file = file_get_contents($file);
-			preg_match_all('/function ([\w]+)/',$file,$matches);
-			foreach ($matches[1] as $key => $value) {
+			$file =  file_get_contents($file);
+			preg_match_all('#'.$path.'#',$file,$matches);
+			foreach ($matches[$index] as $key => $value) {
 				$data[] = $value;
 			}
 
