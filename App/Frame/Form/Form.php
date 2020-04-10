@@ -73,6 +73,7 @@ function checkbox($name, $label = null, $options = array())
     }
     return $label . surround($html, $surrond);
 }
+
 function submit($name = "Envoyer", $options = [])
 {
     $surrond = isset($options['surrond']) ? $options['surrond'] : [];

@@ -15,9 +15,7 @@
 		}else{
 			$views = APP . 'Module'  . DS . ucfirst($request['request']['controller']) . DS . 'Views'. DS .  $views.'.php';
 		}
-		ob_start(); 
-		require($views);
-		$content = ob_get_clean();  
+		$view = require_once $views;
 		$theme = APP . "Theme" . DS . ($conf['tmp'] ?? "default") .".php";
 		if (file_exists($theme)) {
 			require $theme;

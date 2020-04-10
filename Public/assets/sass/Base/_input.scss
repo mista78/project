@@ -1,0 +1,78 @@
+input[type=text],input[type=date] ,input[type=password],input[type=email], select,textarea {
+    width: 100%;
+    display: block;
+    padding: $gap $gap * 2;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.4;
+    color: #495057;
+    background-color: transparent;
+    background-clip: padding-box;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: .25rem;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    color: #000;
+    &:hover, &:focus {
+      background-color: lighten(rgba(#000,.1), 75%);
+    }
+}
+
+select option {
+  color: #000;
+}
+textarea, select, input, button,label {
+    outline: none;
+}
+label {
+  display: block;
+  color: #afafaf;
+  text-transform: uppercase;
+  margin-bottom: $gap;
+}
+
+textarea {
+    min-height: 250px;
+    resize:vertical;
+}
+
+
+button {
+    display: inline-block;
+    font-weight: 400;
+    color: #000;
+    text-align: center;
+    vertical-align: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-color: rgba(#000,.1);
+    border: none;
+    padding: $gap $gap * 2 ;
+    font-size: 1rem;
+    line-height: 1.4;
+    border-radius: .25rem;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    cursor: pointer;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.button {
+  background: rgba(255, 255, 255, 0.2);
+  border: 3px solid white;
+  line-height: 15px;
+  color: white;
+  font-family: 'Rajdhani', 'roboto';
+  font-weight: 500;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  display: inline-block;
+  font-size: 15px;
+  transition: transform 0.3s;
+  cursor: pointer;
+  &:hover {
+      transform: scale(1.2);
+  }
+}

@@ -1,0 +1,64 @@
+@mixin m($data) {
+	.m-#{$data} {
+		margin: #{$data * $gap}!important; 
+	}
+	@media (max-width: 601px) {
+		.m-xs-#{$data} {
+			margin: #{$data * $gap}!important; 
+		}
+	}
+}
+
+@mixin mt($data) {
+	.mt-#{$data} {
+		margin-top: #{$data * $gap}!important; 
+	}
+	@media (max-width: 601px) {
+		.mt-xs-#{$data} {
+			margin-top: #{$data * $gap}!important; 
+		}
+	}
+}
+
+@mixin mb($data) {
+	.mb-#{$data} {
+		margin-bottom: #{$data * $gap}!important; 
+	}
+	@media (max-width: 601px) {
+		.mb-xs-#{$data} {
+			margin-bottom: #{$data * $gap}!important; 
+		}
+	}
+}
+
+@mixin ml($data) {
+	.ml-#{$data} {
+		margin-left: #{$data * $gap}!important; 
+	}
+	@media (max-width: 601px) {
+		.ml-xs-#{$data} {
+			margin-left: #{$data * $gap}!important; 
+		}
+	}
+}
+
+@mixin mr($data) {
+	.mr-#{$data} {
+		margin-right: #{$data * $gap}!important; 
+	}
+	@media (max-width: 601px) {
+		.mr-xs-#{$data} {
+			margin-right: #{$data * $gap}!important; 
+		}
+	}
+}
+
+@for $i from 0 through 20 {
+	@include m($i);
+	@include mt($i);
+	@include mb($i);
+	@include ml($i);
+	@include mr($i);
+}
+
+

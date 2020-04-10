@@ -1,0 +1,10 @@
+vendor/
+.phpintel/
+.settings/
+.vscode/
+App/Class/Conf.php
+Public/phpmyadmin
+Public/assets/css
+Public/assets/js
+Public/assets/img
+Public/img

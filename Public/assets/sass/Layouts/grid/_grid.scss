@@ -1,0 +1,81 @@
+  
+  [class*='#{$col}-'] {
+    &.test {
+      background-color: #fc0;
+      border: 1px solid darken(#fc0,7);
+    }
+    min-height: 1px;
+    padding: 0  $gutter * .5;
+  }
+
+  [class*='grid-'] {
+    display: grid;
+    grid-row-gap:$gutter; 
+  }
+
+  .row {
+  	margin: 0 $gutter * -0.5;
+  	@extend %clearfix;
+  }
+
+  @each $pref in $list {
+    @for $i from 1 through $columns {
+      @media only screen and (min-width: $medium) {
+        .#{$col}-#{$pref}-#{$i} {
+          float: left;
+        }
+      }
+    }
+  }
+
+  @media only screen and (min-width: $small - 100) {
+    $i: 1;
+    @while $i < $columns {
+      .grid-#{$i},
+      .grid-#{$i + 1} {
+        grid-column-gap: $gutter * .5; 
+        grid-template-columns:repeat(ceil(($i/2)),1fr);
+        grid-auto-flow: row dense;
+      }
+      $i: $i + 2;
+    }
+  }
+  @media only screen and (min-width: $large - 100) {
+    @for $i from 1 through $columns {
+      .grid-#{$i}  {
+        grid-column-gap: $gutter * .5; 
+        grid-row-gap: $gutter * .5; 
+        grid-template-columns:repeat($i,1fr)
+      }
+
+      .grid-col-start-#{$i} {
+        grid-column-start: span $i;
+      }
+
+      .grid-row-start-#{$i} {
+        grid-row-start: span $i;
+      }
+    }
+  }
+
+  @include resp-col('-xs');
+  
+  @media only screen and (min-width: $small) {
+    @include resp-col('-sm');
+  }
+
+  @media only screen and (min-width: $medium) {
+    @include resp-col('-md');
+  }
+
+  @media only screen and (min-width: $large) {
+    @include resp-col('-lg');
+  }
+
+
+  
+
+  .col-centered {
+      float: none;
+      margin: 0 auto;
+  }

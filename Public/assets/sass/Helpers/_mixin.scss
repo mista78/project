@@ -1,0 +1,94 @@
+@mixin resp-col($suf: '') {
+  @for $i from 0 through $columns {
+    @if $i != 0 {
+      .#{$col}#{$suf}-#{$i} {
+        width: $i / $columns * 100%;
+        
+      }
+    }
+  }
+}
+
+@mixin min ($values) {
+  @media (min-width: #{$values}px) {
+    @content;
+  }
+}
+
+@mixin prefix($prop, $val...) {
+    @each $prefix in '-webkit-', '-moz-', '-ms-', '' {
+        #{$prefix}#{$prop}: $val;
+    }
+}
+
+@mixin transform($transforms) {
+	-webkit-transform: $transforms;
+	-moz-transform: $transforms;
+	-ms-transform: $transforms;
+	transform: $transforms;
+}
+@mixin box-shadow($top, $left, $blur, $color, $inset:"") {
+
+  -webkit-box-shadow:$top $left $blur $color #{$inset};
+  -moz-box-shadow:$top $left $blur $color #{$inset};
+  box-shadow:$top $left $blur $color #{$inset};
+}
+
+@mixin transition($transition...) {
+  -moz-transition:    $transition;
+  -o-transition:      $transition;
+  -webkit-transition: $transition;
+  transition:         $transition;
+}
+@mixin transition-property($property...) {
+  -moz-transition-property:    $property;
+  -o-transition-property:      $property;
+  -webkit-transition-property: $property;
+  transition-property:         $property;
+}
+@mixin transition-duration($duration...) {
+  -moz-transition-property:    $duration;
+  -o-transition-property:      $duration;
+  -webkit-transition-property: $duration;
+  transition-property:         $duration;
+}
+@mixin transition-timing-function($timing...) {
+  -moz-transition-timing-function:    $timing;
+  -o-transition-timing-function:      $timing;
+  -webkit-transition-timing-function: $timing;
+  transition-timing-function:         $timing;
+}
+@mixin transition-delay($delay...) {
+  -moz-transition-delay:    $delay;
+  -o-transition-delay:      $delay;
+  -webkit-transition-delay: $delay;
+  transition-delay:         $delay;
+}
+%clearfix {
+  &:before, &:after {
+    content:" ";
+    display:table;
+  }
+
+  &:after {
+    clear:both;
+  }
+
+  & {
+    zoom:1;
+  }
+}
+
+%col {
+  position: relative;
+  padding: 0 $gutter * 0.5;
+}
+
+%shadow {
+  box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.1);
+}
+
+@import "help/margin/margin";
+@import "help/padding/padding";
+@import "help/position/position";
+@import "help/text/align";
