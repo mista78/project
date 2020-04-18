@@ -39,13 +39,13 @@ function GetParser($url,$request)
         }
     }
         $params = explode('/', $url);
-    if (in_array($params[0], array_keys($route['prefixes']))) {
-        $request['prefix'] = $route['prefixes'][$params[0]];
+    if (isset($route['prefixes']) && in_array($params[0], array_keys($route['prefixes']))) {
+        $request['prefix'] = trim($route['prefixes'][$params[0]]);
         array_shift($params);
     }
         $request['request']['controller'] = ucfirst($params[0]);
         $request['request']['action'] = isset($params[1]) ? $params[1] : 'index';
-    foreach ($route['prefixes'] as $k => $v) {
+    foreach (isset($route['prefixes']) ? $route['prefixes'] : [] as $k => $v) {
         if (strpos($request['request']['action'], $v.'_') === 0) {
             $request['prefix'] = $v;
             $request['request']['action'] = str_replace($v.'_', '', $request['request']['action']);
@@ -102,12 +102,23 @@ function Url($url = null)
             }
         }
     }
-    foreach ($route['prefixes'] as $k => $v) {
+    foreach (isset($route['prefixes']) ? $route['prefixes'] : [] as $k => $v) {
         if (strpos($url, $v) === 0) {
             $url = str_replace($v, $k, $url);
         }
     }
-        return WEBROOT . $url;
+    if(isset($route['prefixes'])) {
+        foreach ($route['request'] as $v) {
+            if (preg_match($v['originreg'], $url, $match)) {
+                $url = $v['redir'];
+                foreach ($match as $k => $w) {
+                    $url = str_replace(":$k:", $w, $url);
+                }
+            }
+        }
+    }
+    
+    return WEBROOT . $url;
 }
 
 function Webroot($url)

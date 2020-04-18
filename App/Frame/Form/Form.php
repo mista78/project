@@ -41,6 +41,7 @@ function select($name, $label, $options = [])
     $tabs = [];
     $attr = attribute($options, ['surrond','options']);
     $surrond = isset($options['surrond']) ? $options['surrond'] : [];
+    $options['options'] = isset($options['options']) ? $options['options'] : [];
     $label = label($name, $label);
     $html = "<select name='$name' $attr>";
     $html .= "<option value=''> </option>";
@@ -67,9 +68,9 @@ function checkbox($name, $label = null, $options = array())
 
     $value = getValue($name);
 
-    $html = "<input type='hidden' name='$name' value='0'> <label class='switch'><input type='$type' name='$name' value='1' ". (empty($value && $value > 0) ? '' : 'checked') ."><span class='slider round'></span></label>";
+    $html = "<input type='hidden' name='$name' value='0'> <input class='check' type='$type' name='$name' value='1' ". (empty($value && $value > 0) ? '' : 'checked') .">";
     if (isset($options['message'])) {
-        $html .= $options['message'];
+        $html .= tag($options['message'], "span", "check");
     }
     return $label . surround($html, $surrond);
 }

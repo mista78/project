@@ -7,28 +7,31 @@
 		$request 	= Request();
 		$d 			= [];
 		$initRoute = glob(APP . "Module".DS."*".DS."Controller".DS."*");
-		$prefixes = null;
-		$routing = null;
 		foreach ($initRoute as $key => $value) {
 			$prefixes = GetMethod("@Prefix\((.*)\)",$value);
 			foreach ($prefixes as $prkey => $pref) {
 				$pref = explode(",", trim($pref));
 				unset($prefixes[$prkey]);
-				$prefixes[$pref[0]] = $pref[1];
+				Prefix($pref[0], trim($pref[1]));
 			}
 			$routing = GetMethod("@Route\((.*)\)",$value);
 			foreach ($routing as $rokey => $rotef) {
 				$rotef = explode(",", trim($rotef));
 				unset($routing[$rokey]);
-				$routing[$rotef[0]] = trim($rotef[1]);
+				GetUrl($rotef[0], trim($rotef[1]));
 			}
 		}
-		foreach ($prefixes as $pk => $pv) {
-			Prefix($pk, $pv);
+		$genData 	= [];
+		$Entities 	= glob(APP . "Entity" . DS. "*");
+		foreach ($Entities as $key => $Entity) {
+			$champsTable= strtolower(str_replace([APP . "Entity" . DS, ".php"], ["",""], $Entity));
+			$champsType	= GetMethod('\* (.*)',$Entity);
+			$champsName = GetMethod('\$(.*)',$Entity);
+			foreach ($champsType as $k => $v) {
+				$genData[$champsTable][strtolower(trim($champsName[$k]))] = strtolower(trim($v));
+			}
 		}
-		foreach ($routing as $k => $v) {
-			GetUrl($k, $v);
-		}
+		genTable($genData);
 		GetParser($request['url'],$request);
 		loadController();
 		if (isset($request['prefix'])) {
@@ -54,6 +57,30 @@
 		return APP . 'Module'. DS . ucfirst($text) . DS .'Controller'. DS .ucfirst($filename).'.php';
 	}
 
+	function genTable($data = []) {
+		global $key, $db;
+		$sql = "";
+		foreach ($data as $table => $champs) {
+			$sql .= "CREATE TABLE IF NOT EXISTS `$table`(";
+            $sql .= "`id` int(11) NOT NULL AUTO_INCREMENT, PRIMARY KEY (`id`)";
+            $sql .= ");";
+            $db->query($sql);
+            foreach ($champs as $champ => $props) {
+            	if(empty(@$db->query("SELECT $champ FROM $table"))) {
+                    $sql .= " ALTER TABLE `$table` ADD COLUMN `$champ` $props NULL DEFAULT NULL AFTER `$key`; ";
+                }
+            	$key = $champ;
+				foreach (@$db->query("SHOW COLUMNS FROM $table")->fetchAll(PDO::FETCH_ASSOC) as $dropkey => $dropValue) {
+					if(!isset($champs[$dropValue["Field"]])) {
+						$field = $dropValue["Field"];
+                        $sql .= "ALTER TABLE `$table` DROP COLUMN `$field`;";
+                    }
+				}
+
+            }
+		}
+		$db->query($sql);
+	}
 	function loadController() 
 	{
 		global $request,$route,$rended,$d;

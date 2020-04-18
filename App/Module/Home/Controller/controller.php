@@ -4,13 +4,18 @@
 	 * @Route('', home/index)
 	 */
 	function index() {
+	}
+
+	/**
+	 * @Route(blog, home/blog)
+	 */
+	function blog() {
 		
 	}
 
 	/**
-	 * @Prefix(editor,ajax)
-	 * @Route(blog, home/blog)
+	 * @Route(cats, home/category)
 	 */
-	function blog() {
+	function category() {
 		
 	}

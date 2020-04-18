@@ -19,6 +19,6 @@
 		$theme = APP . "Theme" . DS . ($conf['tmp'] ?? "default") .".php";
 		if (file_exists($theme)) {
 			require $theme;
-		} else { echo $content; }
+		} else { echo getWidjet("blockcontainer",$view); }
 		$rended = true; 
 	}

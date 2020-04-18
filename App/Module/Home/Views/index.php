@@ -1,46 +1,23 @@
 <?php  
 	
+	$layouts["header"]  = [];
 	$layouts["content"] = [
 		[
 			"container" => true,
 			"item" => [
 				[
-					"type" => "text",
-					"title" => "Project"
-				]
-			]
-		],
-		[
-			"container" => true,
-			"item" => [
-				[
-					"type" => "text",
-					"text" => "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-		quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-		consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-		cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-		proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-				],
-				[
-					"type" => "text",
-					"text" => "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-		quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-		consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-		cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-		proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-				],
-				[
-					"type" => "text",
-					"text" => "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-		quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-		consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-		cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-		proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-				],
+                    "type" => "actues",
+                    "class" => ["pt-10", "pb-10"],
+                    "text" 	=> [
+                    	"title" => "Latest Articles",
+                    	"class" => ["pb-8", "ta-c"],
+                    ],
+                    "data" => Find(["table" => "news", "conditions" => "online > 0", "order" => "created desc"])
+                ],
 			]
 		]
 	];
+	$header = require_once APP . "Theme/Partial/Header.php";
+    $header["item"] = array_merge($header["item"],$layouts["header"]);
+    $layouts["header"] = $header;
 	return $layouts;

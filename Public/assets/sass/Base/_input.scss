@@ -1,7 +1,7 @@
 input[type=text],input[type=date] ,input[type=password],input[type=email], select,textarea {
     width: 100%;
     display: block;
-    padding: $gap $gap * 2;
+    padding: space(1) space(2);
     font-size: 1rem;
     font-weight: 400;
     line-height: 1.4;
@@ -48,7 +48,7 @@ button {
     user-select: none;
     background-color: rgba(#000,.1);
     border: none;
-    padding: $gap $gap * 2 ;
+    padding: space(1) space(2) ;
     font-size: 1rem;
     line-height: 1.4;
     border-radius: .25rem;
@@ -64,7 +64,7 @@ button {
   color: white;
   font-family: 'Rajdhani', 'roboto';
   font-weight: 500;
-  padding: 10px 20px;
+  padding: space(1) space(2);
   text-align: center;
   text-decoration: none;
   text-transform: uppercase;
@@ -75,4 +75,84 @@ button {
   &:hover {
       transform: scale(1.2);
   }
+}
+
+/* CSS Simple Pre Code */
+pre {
+    background: #333;
+    white-space: pre;
+    word-wrap: break-word;
+    overflow: auto;
+}
+
+pre.code {
+    margin: 20px 25px;
+    border-radius: 4px;
+    border: 1px solid #292929;
+    position: relative;
+}
+
+pre.code label {
+    font-family: sans-serif;
+    font-weight: bold;
+    font-size: 13px;
+    color: #ddd;
+    position: absolute;
+    left: 1px;
+    top: 15px;
+    text-align: center;
+    width: 90px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    pointer-events: none;
+}
+
+pre.code code {
+    font-family: "Inconsolata","Monaco","Consolas","Andale Mono","Bitstream Vera Sans Mono","Courier New",Courier,monospace;
+    display: block;
+    margin: 0 0 0 90px;
+    padding: 15px 16px 14px;
+    border-left: 1px solid #555;
+    overflow-x: auto;
+    font-size: 13px;
+    line-height: 19px;
+    color: #ddd;
+}
+
+pre::after {
+    content: "double click to selection";
+    padding: 0;
+    width: auto;
+    height: auto;
+    position: absolute;
+    right: 18px;
+    top: 14px;
+    font-size: 12px;
+    color: #ddd;
+    line-height: 20px;
+    overflow: hidden;
+    -webkit-backface-visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+pre:hover::after {
+    opacity: 0;
+    visibility: visible;
+}
+
+pre.code-css code {
+    color: #91a7ff;
+}
+
+pre.code-html code {
+    color: #aed581;
+}
+
+pre.code-javascript code {
+    color: #ffa726;
+}
+
+pre.code-jquery code {
+    color: #4dd0e1;
 }
