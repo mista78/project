@@ -1,0 +1,20 @@
+@import 'Helpers/variables';
+@import 'Helpers/mixin';
+.Form {
+    @extend %card;
+    max-width: 980px;
+    margin: 0 auto;
+    & .row {
+        margin-bottom: space(3);
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    .check {
+    	vertical-align: middle;
+    	& + .check {
+    		margin-left: space(1);
+    	}
+    }
+}

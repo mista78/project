@@ -8,7 +8,9 @@
 		<link rel="stylesheet" href="/<?= CompileCss("assets/sass/") ?>">
 	</head>
 	<body>
-		<?=  getWidjet("blockcontainer",$view); ?>
+		<div class="Admin">
+			<?=  getWidjet("blockcontainer",$view); ?>
+		</div>
 		<script src="/<?= CompileJs() ?>"></script>
 	</body>
 </html>

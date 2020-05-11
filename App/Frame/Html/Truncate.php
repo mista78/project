@@ -33,8 +33,11 @@
     }
 
     function CompileJs() {
+<<<<<<< HEAD
         global $called;
         if($called === 0) return;
+=======
+>>>>>>> 0faa0f0b0ffd81f397571380b19e3145962075d3
         $compile = loadFiletime(ROOT .  "Public/assets/sass/js/"  . '*',".js") ?? [];
         
         $file = glob(ROOT . "Public/assets/js/" . '*');
@@ -43,7 +46,10 @@
         } else {
             return str_replace(ROOT . "Public/" , "", current($file));
         }
+<<<<<<< HEAD
         $called = 0;
+=======
+>>>>>>> 0faa0f0b0ffd81f397571380b19e3145962075d3
     }
 
     /**

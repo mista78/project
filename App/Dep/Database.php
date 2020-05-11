@@ -3,7 +3,7 @@
 return array(
 
 	'host' => 'localhost',
-	'base' => 'test',
+	'base' => 'project',
 	'user' => 'root',
 	'pass' => '',
 

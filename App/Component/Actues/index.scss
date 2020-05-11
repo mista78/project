@@ -1,0 +1,12 @@
+@import 'Helpers/variables';
+@import 'Helpers/mixin';
+.Actues {
+	display:grid;
+	grid-template-columns: 1fr;
+	grid-gap: space(3);
+	@include min(601) {
+		& {
+			grid-template-columns: repeat(3,1fr);
+		}
+	}
+}

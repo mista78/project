@@ -8,6 +8,7 @@
 	const DS 			= DIRECTORY_SEPARATOR;
 	const ROOT 			= _DIR_ . DS;
 	const APP 			= ROOT . 'App' . DS;
+	const WEB 			= ROOT . 'Public' . DS;
 	const WEBROOT		= '/';
 	
 	require_once APP 	. "Conf". DS ."Route.php";
