@@ -206,3 +206,28 @@
         $db->query($sql);
         
     }
+    
+    function genTable($data = []) {
+        global $key, $db;
+        $sql = "";
+        foreach ($data as $table => $champs) {
+            $sql .= "CREATE TABLE IF NOT EXISTS `$table`(";
+            $sql .= "`id` int(11) NOT NULL AUTO_INCREMENT, PRIMARY KEY (`id`)";
+            $sql .= ");";
+            $db->query($sql);
+            foreach ($champs as $champ => $props) {
+                if(empty(@$db->query("SELECT $champ FROM $table"))) {
+                    $sql .= " ALTER TABLE `$table` ADD COLUMN `$champ` $props NULL DEFAULT NULL AFTER `$key`; ";
+                }
+                $key = $champ;
+                foreach (@$db->query("SHOW COLUMNS FROM $table")->fetchAll(PDO::FETCH_ASSOC) as $dropkey => $dropValue) {
+                    if(!isset($champs[$dropValue["Field"]])) {
+                        $field = $dropValue["Field"];
+                        $sql .= "ALTER TABLE `$table` DROP COLUMN `$field`;";
+                    }
+                }
+
+            }
+        }
+        $db->query($sql);
+    }

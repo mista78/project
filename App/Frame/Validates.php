@@ -13,7 +13,7 @@ function validates($data, $bdd = null, $path = '')
                     $errors[$k] = $v['message'];
                 }
             } elseif ($v['rule'] === 'match') {
-                if (!preg_match('/^'.$v['regex'].'$/', $data[$k])) {
+                if (!preg_match('/^' . $v['regex'] . '$/', $data[$k])) {
                     $errors[$k] = $v['message'];
                 }
             } elseif ($v['rule'] === 'minSize') {

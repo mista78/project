@@ -12,10 +12,10 @@
         max-width: 1200px;
         margin-left: auto;
         margin-right: auto;
-        padding-left: $gap * 2;
-        padding-right: $gap * 2;
+        padding-left: space(2);
+        padding-right: space(2);
     }
-    @include min(768) {
+    @include min(601) {
       & {
         flex-direction: row;
       }

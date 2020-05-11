@@ -5,7 +5,7 @@
 		
 		$request = [];
 
-		$request['url'] = isset($_SERVER['REQUEST_URI']) ? $_SERVER['REQUEST_URI'] : "/";
+		$request['url'] = isset($_SERVER['REQUEST_URI']) ? str_replace("/project", "", $_SERVER['REQUEST_URI']) : "/";
 
 		return $request;
 	}

@@ -25,11 +25,25 @@
     function CompileCss($dirSass, $dirCss = "assets/css/",$formated = "scss_formatter_compressed") {
         $compile = loadFiletime(ROOT .  "Public/" . $dirSass . '*') ?? [];
         $file = glob(ROOT . "Public/" . $dirCss . '*');
-        return SassCompiler::run(ROOT .  "Public/" . $dirSass , ROOT .  "Public/" . $dirCss,$formated);
+        if (count($compile) > 0) {
+            return SassCompiler::run(ROOT .  "Public/" . $dirSass , ROOT .  "Public/" . $dirCss,$formated);
+        } else {
+            return str_replace(ROOT . "Public/" , "", current($file));
+        }
     }
 
     function CompileJs() {
-        return loadJs();
+        global $called;
+        if($called === 0) return;
+        $compile = loadFiletime(ROOT .  "Public/assets/sass/js/"  . '*',".js") ?? [];
+        
+        $file = glob(ROOT . "Public/assets/js/" . '*');
+        if (count($compile) > 0) {
+            return loadJs();
+        } else {
+            return str_replace(ROOT . "Public/" , "", current($file));
+        }
+        $called = 0;
     }
 
     /**
@@ -69,7 +83,7 @@
         foreach ($test as $key => $value) {
             if (is_file($value)) {
                 $time = filemtime($value);
-                if ($time >= time() - 60 * 60 * 3  ) {
+                if ($time >= time() - 60 * 3  ) {
                     $compile[] = $value;
                 }
             } else {
