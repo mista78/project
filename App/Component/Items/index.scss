@@ -1,0 +1,55 @@
+@import 'Helpers/variables';
+@import 'Helpers/mixin';
+.Items {
+	border-radius: space(1) * .5;
+	overflow: hidden;
+	height: 100%;
+    background: #fff;
+    border: 1px solid #eee;
+    display: flex;
+    flex-direction: column;
+    .Items__img {
+    	flex: 1;
+		.Responsiveimg {
+			border-bottom: 2px solid #fc0;
+		}
+    }
+	.Items__content {
+		background: #fff;
+		padding-top: space(3);
+		padding-left: space(3); 
+		padding-right: space(3);
+		padding-bottom: space(1); 
+		flex: 1;
+		h3 {
+			margin-bottom: space(2);
+		}
+	}
+	.Items__footer {
+		padding: space(2) space(3);
+		display: flex;
+    	justify-content: space-between;
+    	.time {
+    		color: #bababa;
+    		font-size: .9em;
+    	}
+		span {
+			font-weight: bold;
+			position: relative;
+			text-transform: uppercase;
+			color: #fc0;
+		} 
+		span + span {
+			margin-left: space(1);
+			&:after {
+				content: "";
+				width: 2px;
+				height: 100%;
+				background:#eaeaea;
+				position: absolute;
+				left: -6px;
+			}
+		}
+	}
+}
+

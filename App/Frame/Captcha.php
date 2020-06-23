@@ -1,6 +1,6 @@
 <?php
 
-function styles_captcha($options, $exception = [])
+function stylesCaptcha($options, $exception = [])
 {
     $i = 0;
     $labelAttr = "";
@@ -18,10 +18,10 @@ function image($string, $data = [])
     $hauteur = (isset($data['h'])) ? $data['h'] : 20;
     $img = imagecreate($largeur, $hauteur);
     $blanc = imagecolorallocate($img, 255, 255, 255);
-    $noir = (isset($data['c'])) ? imagecolorallocate($img, $data['c']['r'],$data['c']['g'],$data['c']['b'])  : imagecolorallocate($img, 0, 0, 0);
+    $noir = (isset($data['c'])) ? imagecolorallocate($img, $data['c']['r'], $data['c']['g'], $data['c']['b']) : imagecolorallocate($img, 0, 0, 0);
     imagecolortransparent($img, $blanc);
     $milieuHauteur = ($hauteur / 2) - 8;
-    imagestring($img, 6, strlen($string) /2, $milieuHauteur, $string, $noir);
+    imagestring($img, 6, strlen($string) / 2, $milieuHauteur, $string, $noir);
     imagepng($img);
     imagedestroy($img);
 }
@@ -38,7 +38,7 @@ function codeGenerate($options)
             array_push($data, $value);
         }
     }
-    $nl = count($data)-1;
+    $nl = count($data) - 1;
     $string = $options['hsh'] . '';
     for ($i = 0; $i < $options['num']; ++$i) {
         $string .= $data[mt_rand(0, $nl)];
@@ -49,15 +49,15 @@ function codeGenerate($options)
 function captcha($options = [])
 {
 
-    $options['typ']  = isset($options['typ']) ? $options['typ'] : "text";
-    $options['atr']  = isset($options['atr']) ? $options['atr'] : [];
-    $options['num']  = isset($options['num']) ? $options['num'] : 6;
-    $options['str']  = isset($options['str']) ? $options['str'] : range('0', '9');
-    $options['hsh']  = isset($options['hsh']) ? $options['hsh'] : null;
-    $options['cod']  = isset($options['cod']) ? $options['cod'] : 'captcha';
-    $string          = codeGenerate($options);
-    $attr            = styles_captcha($options['atr']);
-    $_SESSION[$options['cod']]  = $string;
+    $options['typ'] = isset($options['typ']) ? $options['typ'] : "text";
+    $options['atr'] = isset($options['atr']) ? $options['atr'] : [];
+    $options['num'] = isset($options['num']) ? $options['num'] : 6;
+    $options['str'] = isset($options['str']) ? $options['str'] : range('0', '9');
+    $options['hsh'] = isset($options['hsh']) ? $options['hsh'] : null;
+    $options['cod'] = isset($options['cod']) ? $options['cod'] : 'captcha';
+    $string = codeGenerate($options);
+    $attr = stylesCaptcha($options['atr']);
+    $_SESSION[$options['cod']] = $string;
     if ($options['typ'] == "image") {
         image($string);
     } else {
@@ -65,4 +65,3 @@ function captcha($options = [])
         return $html;
     }
 }
-

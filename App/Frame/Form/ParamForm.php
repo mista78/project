@@ -27,7 +27,7 @@ function label($name, $label)
 {
     if ($label != null) {
         if (!is_array($label)) {
-            $label = "<label id='input$name' > $label </label><br>";
+            $label = "<label id='input$name' > $label </label>";
         } else {
             if ($label['name'] == 'img') {
                 $labelAttr = attribute($label, ['name']);

@@ -1,0 +1,59 @@
+@mixin p($data) {
+	.p-#{$data} {
+		padding: #{$data * $gap}!important; 
+	}
+}
+
+@mixin pt($data) {
+	.pt-#{$data} {
+		padding-top: #{$data * $gap}!important; 
+	}
+}
+
+@mixin pb($data) {
+	.pb-#{$data} {
+		padding-bottom: #{$data * $gap}!important; 
+	}
+}
+
+@mixin pl($data) {
+	.pl-#{$data} {
+		padding-left: #{$data * $gap}!important; 
+	}
+}
+
+@mixin pr($data) {
+	.pr-#{$data} {
+		padding-right: #{$data * $gap}!important; 
+	}
+}
+
+
+@mixin br($data) {
+	.br-#{$data} {
+		border-radius: #{$data * $gap}!important; 
+	}
+}
+
+@mixin gcg ($data) {
+  .gc-#{$data} {
+    grid-column-gap: #{$data * $gap}!important;
+  }
+}
+
+@mixin grc ($data) {
+  .gr-#{$data} {
+    grid-row-gap: #{$data * $gap}!important;
+  }
+}
+
+@for $i from 0 through 20 {
+	@include p($i);
+	@include pt($i);
+	@include pb($i);
+	@include pl($i);
+	@include pr($i);
+	@include br($i);
+	@include gcg($i);
+  	@include grc($i);
+}

@@ -1,0 +1,28 @@
+
+	$gap:					8px     !default;
+	$columns:               12 		!default;
+	$gutter:                $gap * 5 !default;
+
+	$small:                 768px 	!default;
+	$medium:                992px 	!default;
+	$large:                 1130px 	!default;
+
+	$container:             1200px 	!default;
+
+	$col:                   'col'	!default;
+	$list: 					xs sm md lg;
+
+
+	
+
+
+	$color-default: 		hsl(45, 100%, 50%) 	!default;
+	$color-secondary: 		hsl(0, 0%, 50%) 	!default;
+	$color-tertiary: 		hsl(0, 0%, 24%) 	!default;
+	$color-quaternary: 		hsl(45, 100%, 85%) 	!default;
+	
+	$color-white: 			hsl(0, 0%, 100%) 	!default;
+
+	$cards:                  'block'!default;
+
+

@@ -1,0 +1,56 @@
+@import 'Helpers/variables';
+@import 'Helpers/mixin';
+.BlocsContainer {
+    display: flex;
+    flex-direction: column;
+    background-size: cover;
+    background-position: top center;
+    background-repeat: no-repeat;
+    width: 100%;
+    &.wrap {
+        width: calc(100% - 40px);
+        max-width: $container;
+        margin-left: auto;
+        margin-right: auto;
+<<<<<<< HEAD
+        padding-left: space(2);
+        padding-right: space(2);
+=======
+        padding-left: space(5);
+        padding-right: space(5);
+>>>>>>> 0faa0f0b0ffd81f397571380b19e3145962075d3
+    }
+    @include min(601) {
+      & {
+        flex-direction: row;
+      }
+    }
+}
+
+.flex-bloc {
+    position: relative;
+    flex: 1;
+    &.span-2 {
+        flex: 2;
+    }
+
+    &.span-3 {
+        flex: 3;
+    }
+
+    &.span-4 {
+        flex: 4;
+    }
+}
+
+.wrapperSection {
+    .flex-bloc + .flex-bloc {
+        @include min(601) {
+            & {
+                margin-left: space(3);
+            }
+        }
+    }
+}
+
+

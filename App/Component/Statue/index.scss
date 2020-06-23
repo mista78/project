@@ -1,0 +1,13 @@
+.Statue {
+	width: 15px;
+	height: 15px;
+	border-radius: 50%;
+	background:#eee;
+	margin: auto;
+	&.staged {
+		background: #f39c12;
+	}
+	&.publish {
+		background: #2ecc71;
+	}
+}

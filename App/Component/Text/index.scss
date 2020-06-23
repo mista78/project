@@ -1,0 +1,25 @@
+@import 'Helpers/variables';
+@import 'Helpers/mixin';
+.Text {
+	& h1 {
+		text-align: center;
+		position: relative;
+		&:after {
+			content: "";
+		    position: absolute;
+		    bottom: -10px;
+		    width: 60px;
+		    margin: 0 auto;
+		    height: 1px;
+		    background: #fc0;
+		    left: 0;
+		    right: 0;
+		    border-radius: 50%;
+		}
+	}
+}
+
+.wrapperSection .Text {
+	margin-bottom: space(4);
+	margin-top: space(4);
+}

@@ -1,0 +1,104 @@
+/* CSS Document */
+@import 'Helpers/variables';
+@import 'Helpers/mixin';
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+@import url(https://fonts.googleapis.com/css?family=Bree+Serif);
+
+
+p {
+	text-align: center;
+}
+
+
+nav {
+	background-color: #34495e;
+  margin-top: 0;
+	position: relative;
+	z-index: 1000;
+}
+
+nav ul {
+	padding: 0;
+  margin: 0;
+	list-style: none;
+	position: relative;
+	}
+	
+nav ul li {
+	display:inline-block;
+	background-color: #34495e;
+	}
+
+nav a {
+	display:block;
+	padding:0 10px;	
+	color:#FFF;
+	font-size:20px;
+	line-height: 60px;
+	text-decoration:none;
+}
+
+nav a:hover { 
+	background-color: rgba(0,0,0, .2); 
+}
+
+/* Hide Dropdowns by Default */
+nav ul ul {
+	display: none;
+	position: absolute; 
+	top: 60px; /* the height of the main nav */
+}
+	
+/* Display Dropdowns on Hover */
+nav ul li:hover > ul {
+	display:inherit;
+}
+	
+/* Fisrt Tier Dropdown */
+nav ul ul li {
+	width:170px;
+	float:none;
+	display:list-item;
+	position: relative;
+}
+
+/* Second, Third and more Tiers	*/
+nav ul ul ul li {
+	position: relative;
+	top:-60px; 
+	left:170px;
+}
+
+	
+/* Change this in order to change the Dropdown symbol */
+li > a:after { content:  ' +'; }
+li > a:only-child:after { content: ''; }
+
+.Admin {
+	display: grid;
+	grid-template-columns: 250px 1fr;
+	min-height: 100vh;
+	background: #f5f5f7;
+	.Sidebar {
+		box-shadow: 11px 0px 20px 10px rgba(200,200,200,.1);
+		background: #fff;
+		ul {
+			li {
+				color: #4C4868;
+				&.active, &:hover {
+					background: rgba(200,200,200,.1);
+					border-right: 2px solid #fc0;
+					color: #5597D4;
+				}
+				a {
+					display: block;
+					width: 100%;
+					text-decoration: none;
+					font-weight: bold;
+					padding: space(2) space(3);
+					color:inherit;
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,51 @@
+.po-a {
+	position: absolute !important;
+}
+.po-r {
+	position: relative !important;
+}
+.po-f {
+	position: fixed !important;
+}
+.po-s {
+	position: static !important;
+}
+
+
+@mixin ptop ($data) {
+  .ptop-#{$data} {
+    top: #{$data * $gap}!important;
+  }
+}
+
+@mixin pbot ($data) {
+  .pbot-#{$data} {
+    bottom: #{$data * $gap}!important;
+  }
+}
+
+@mixin pleft ($data) {
+  .pleft-#{$data} {
+    left: #{$data * $gap}!important;
+  }
+}
+
+@mixin pright ($data) {
+  .pright-#{$data} {
+    right: #{$data * $gap}!important;
+  }
+}
+
+@for $i from 1 through 20 {
+
+  @include ptop($i);
+  @include pbot($i);
+  @include pleft($i);
+  @include pright($i);
+
+}
+
+.grid-c {
+  align-items: center;
+}
+

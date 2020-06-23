@@ -18,6 +18,9 @@
 	    return "<{$options['html']} {$attr}>";
 	}
 
+	function tag($html, $tags = "div", $class = null) {
+	    return "<$tags class='$class'>$html</$tags>";
+	}
 	function link_script($arg = [])
 	{
 	    if (isset($arg['file'])) {
