@@ -1,4 +1,4 @@
-**Project** est framework PHP, mais pas comme tous les frameworks puisqu'il s'adresse à tous les débutants, car le code de celui-ci est entièrement en procédural. Ce qui permet à un débutant de partir sur une base qu'il peut connaitre et structurer.
+**Project** est un framework PHP, mais pas comme tous les frameworks puisqu'il s'adresse à tous les débutants, car le code de celui-ci est entièrement en procédural. Ce qui permet à un débutant de partir sur une base qu'il peut connaitre et structurer.
 
 ## Création de pages (Modules)
 
